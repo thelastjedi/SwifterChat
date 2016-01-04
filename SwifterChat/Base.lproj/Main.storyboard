@@ -28,15 +28,6 @@
                                                 <constraint firstAttribute="width" constant="282" id="5hc-bc-ORw"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1/1/2016" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6wz-8j-z05">
-                                            <rect key="frame" x="239" y="317" width="140" height="21"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="21" id="dJd-qr-He4"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="K8A-49-2gf">
                                             <rect key="frame" x="0.0" y="286" width="60" height="60"/>
                                             <constraints>
@@ -53,15 +44,24 @@
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="1/1/2016" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6wz-8j-z05">
+                                            <rect key="frame" x="68" y="318" width="51" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="dJd-qr-He4"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <color key="textColor" red="0.8862745098" green="0.8862745098" blue="0.8862745098" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="K8A-49-2gf" firstAttribute="leading" secondItem="Mh3-GC-Ker" secondAttribute="leading" id="6km-9L-gr0"/>
                                         <constraint firstItem="xBH-1d-wEh" firstAttribute="leading" secondItem="Mh3-GC-Ker" secondAttribute="leading" constant="50" id="Elw-dl-69a"/>
-                                        <constraint firstItem="6wz-8j-z05" firstAttribute="leading" secondItem="K8A-49-2gf" secondAttribute="trailing" constant="179" id="FRT-iK-rT1"/>
-                                        <constraint firstItem="6wz-8j-z05" firstAttribute="top" secondItem="cLi-GE-jbf" secondAttribute="bottom" constant="144.5" id="Goe-sW-Lgw"/>
+                                        <constraint firstItem="6wz-8j-z05" firstAttribute="leading" secondItem="K8A-49-2gf" secondAttribute="trailing" constant="8" id="FRT-iK-rT1"/>
+                                        <constraint firstItem="6wz-8j-z05" firstAttribute="top" secondItem="cLi-GE-jbf" secondAttribute="bottom" constant="145.5" id="Goe-sW-Lgw"/>
                                         <constraint firstAttribute="bottom" secondItem="6wz-8j-z05" secondAttribute="bottom" constant="8.5" id="MOn-ZP-3uZ"/>
                                         <constraint firstAttribute="trailing" secondItem="cLi-GE-jbf" secondAttribute="trailing" constant="318" id="PLC-gg-Eo0"/>
-                                        <constraint firstAttribute="trailing" secondItem="6wz-8j-z05" secondAttribute="trailing" constant="221" id="PMp-C5-pqa"/>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="6wz-8j-z05" secondAttribute="trailing" constant="221" id="PMp-C5-pqa"/>
                                         <constraint firstItem="xBH-1d-wEh" firstAttribute="top" secondItem="Mh3-GC-Ker" secondAttribute="top" constant="8" id="Rlb-09-WwG"/>
                                         <constraint firstItem="cLi-GE-jbf" firstAttribute="leading" secondItem="Mh3-GC-Ker" secondAttribute="leading" constant="101" id="W3f-wU-dac"/>
                                         <constraint firstAttribute="bottom" secondItem="K8A-49-2gf" secondAttribute="bottom" constant="0.5" id="Z85-gN-uhi"/>
@@ -71,7 +71,8 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="chatMessage" destination="cLi-GE-jbf" id="a8A-bk-vED"/>
+                                    <outlet property="chatLabel" destination="cLi-GE-jbf" id="tvf-Tz-nas"/>
+                                    <outlet property="timeStampLabel" destination="6wz-8j-z05" id="HLJ-q5-M57"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChatFooterView" rowHeight="71" id="poV-bP-yyw" customClass="ChatFooterView" customModule="SwifterChat" customModuleProvider="target">
@@ -135,9 +136,6 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Chat with yourself" id="iXx-2T-OTS"/>
-                    <connections>
-                        <outlet property="chatTableView" destination="s5p-7g-udy" id="Fje-1E-CFg"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nxq-sS-zzy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

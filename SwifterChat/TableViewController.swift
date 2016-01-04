@@ -10,15 +10,11 @@ import UIKit
 
 class TableViewController: UITableViewController, ChatFooterDelegate {
 
-    @IBOutlet var chatTableView: UITableView!
-    var stubData = []
+    let stubData = ChatDataManager()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        stubData = ["A long time ago in a galaxy far, far away.",
-            "It is a period of civil war. Rebel spaceships, striking from a hidden base, have won their first victory against the evil Galactic Empire.",
-            "During the battle, Rebel spies managed to steal secret plans to the Empire's ultimate weapon, the DEATH STAR, an armored space station with enough power to destroy an entire planet.",
-            "Pursued by the Empire's sinister agents, Princess Leia races home aboard her starship, custodian of the stolen plans that can save her people and restore freedom to the galaxy"]
         
         tableView.estimatedRowHeight = 347
         tableView.rowHeight = UITableViewAutomaticDimension
@@ -36,13 +32,18 @@ class TableViewController: UITableViewController, ChatFooterDelegate {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return stubData.count
+        return stubData.chatMessages.count
     }
 
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> ChatBubbleCell {
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("ChatBubbleCell", forIndexPath: indexPath) as! ChatBubbleCell
-        cell.chatMessage.text = stubData[indexPath.row] as? String
+        let chat = stubData.chatMessages[indexPath.row]
+        cell.chatLabel.text = chat.chatMessage as String
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateStyle = .ShortStyle
+        dateFormatter.timeStyle = .ShortStyle
+        cell.timeStampLabel.text = dateFormatter.stringFromDate(chat.timeStamp) as String
         return cell
     }
     
@@ -69,16 +70,21 @@ class TableViewController: UITableViewController, ChatFooterDelegate {
     }
     
     func scrollToBottom() {
-        let lastIndexPath = NSIndexPath(forRow: stubData.count - 1, inSection: 0)
-        chatTableView.scrollToRowAtIndexPath(lastIndexPath, atScrollPosition: UITableViewScrollPosition.None, animated: true)
+        let lastIndexPath = NSIndexPath(forRow: stubData.chatMessages.count - 1, inSection: 0)
+        self.tableView.scrollToRowAtIndexPath(lastIndexPath, atScrollPosition: UITableViewScrollPosition.None, animated: true)
     }
     
     func sendChat(chatMessage: NSString) {
-        self.view.endEditing(true)
-        self.performSelector(Selector("scrollToBottom"), withObject: nil, afterDelay: 0.3)
         let messageToBeSent = chatMessage.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()) as  NSString!
         if messageToBeSent.length != 0 {
-            print(messageToBeSent)
+            print("Sending message: \(messageToBeSent)")
+            stubData.addNewChat(messageToBeSent, outgoingMessage: true)
+            self.tableView.reloadData()
         }
+        else {
+            self.view.endEditing(true)
+        }
+        
+        self.performSelector(Selector("scrollToBottom"), withObject: nil, afterDelay: 0.3)
     }
 }

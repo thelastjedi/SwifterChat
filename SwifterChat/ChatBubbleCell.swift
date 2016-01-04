@@ -10,8 +10,9 @@ import UIKit
 
 class ChatBubbleCell: UITableViewCell {
 
-    @IBOutlet var chatMessage: UILabel!
-
+    @IBOutlet var chatLabel: UILabel!
+    @IBOutlet var timeStampLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
