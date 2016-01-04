@@ -9,7 +9,7 @@
         <scene sceneID="OYL-2r-lkq">
             <objects>
                 <tableViewController storyboardIdentifier="TableVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="nZz-F1-saG" customClass="TableViewController" customModule="SwifterChat" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="s5p-7g-udy">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="s5p-7g-udy">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -18,7 +18,7 @@
                                 <rect key="frame" x="0.0" y="92" width="600" height="347"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bzu-Fj-blp" id="Mh3-GC-Ker">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="346.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="347"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cloudBubble" translatesAutoresizingMaskIntoConstraints="NO" id="xBH-1d-wEh">
@@ -74,6 +74,59 @@
                                     <outlet property="chatMessage" destination="cLi-GE-jbf" id="a8A-bk-vED"/>
                                 </connections>
                             </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChatFooterView" rowHeight="71" id="poV-bP-yyw" customClass="ChatFooterView" customModule="SwifterChat" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="439" width="600" height="71"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="poV-bP-yyw" id="B0O-eM-pWz">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="71"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Chat" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uba-ia-uhl">
+                                            <rect key="frame" x="8" y="0.0" width="487" height="70.5"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="70.5" id="oj8-qi-k13"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                            <connections>
+                                                <outlet property="delegate" destination="nZz-F1-saG" id="joV-OI-0Oz"/>
+                                            </connections>
+                                        </textField>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k9B-bn-otp">
+                                            <rect key="frame" x="495" y="0.0" width="105" height="70.5"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="105" id="Tfw-9z-WSk"/>
+                                                <constraint firstAttribute="height" constant="70.5" id="Wd4-1q-NwH"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                            <state key="normal" title="Send"/>
+                                            <connections>
+                                                <action selector="sendAction:" destination="poV-bP-yyw" eventType="touchUpInside" id="2Er-ju-jCI"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="k9B-bn-otp" secondAttribute="trailing" id="Nds-bN-UNn"/>
+                                        <constraint firstAttribute="bottom" secondItem="k9B-bn-otp" secondAttribute="bottom" id="R2e-PY-46c"/>
+                                        <constraint firstAttribute="bottom" secondItem="uba-ia-uhl" secondAttribute="bottom" id="Ytm-Nj-Pm4"/>
+                                        <constraint firstItem="uba-ia-uhl" firstAttribute="leading" secondItem="B0O-eM-pWz" secondAttribute="leading" constant="8" id="Zfq-Tu-bh3"/>
+                                        <constraint firstItem="uba-ia-uhl" firstAttribute="leading" secondItem="B0O-eM-pWz" secondAttribute="leading" id="cBe-My-hgF"/>
+                                        <constraint firstItem="k9B-bn-otp" firstAttribute="leading" secondItem="uba-ia-uhl" secondAttribute="trailing" id="n9M-SZ-spc"/>
+                                        <constraint firstItem="k9B-bn-otp" firstAttribute="leading" secondItem="uba-ia-uhl" secondAttribute="trailing" id="teo-wD-hZb"/>
+                                        <constraint firstItem="uba-ia-uhl" firstAttribute="top" secondItem="B0O-eM-pWz" secondAttribute="top" id="uph-Od-kn5"/>
+                                        <constraint firstItem="k9B-bn-otp" firstAttribute="top" secondItem="B0O-eM-pWz" secondAttribute="top" id="vkp-gg-qHB"/>
+                                    </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="cBe-My-hgF"/>
+                                        </mask>
+                                    </variation>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="chatInputField" destination="uba-ia-uhl" id="pnQ-eL-zY9"/>
+                                    <outlet property="sendButton" destination="k9B-bn-otp" id="G3e-9s-nXH"/>
+                                </connections>
+                            </tableViewCell>
                         </prototypes>
                         <sections/>
                         <connections>
@@ -82,27 +135,13 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Chat with yourself" id="iXx-2T-OTS"/>
+                    <connections>
+                        <outlet property="chatTableView" destination="s5p-7g-udy" id="Fje-1E-CFg"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nxq-sS-zzy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="969" y="-459"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
-            <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SwifterChat" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-            </objects>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="8m0-I5-27m">

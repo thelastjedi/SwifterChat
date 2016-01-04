@@ -8,8 +8,9 @@
 
 import UIKit
 
-class TableViewController: UITableViewController {
+class TableViewController: UITableViewController, ChatFooterDelegate {
 
+    @IBOutlet var chatTableView: UITableView!
     var stubData = []
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,12 +42,43 @@ class TableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> ChatBubbleCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("ChatBubbleCell", forIndexPath: indexPath) as! ChatBubbleCell
-
-        cell.backgroundColor = (indexPath.row%2 == 0) ? UIColor.lightGrayColor() : UIColor.redColor()
-        
         cell.chatMessage.text = stubData[indexPath.row] as? String
-
-        
         return cell
+    }
+    
+    override func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        let cell = self.tableView.dequeueReusableCellWithIdentifier("ChatFooterView") as! ChatFooterView
+        cell.frame = CGRectMake(0, 0, CGRectGetWidth(tableView.frame), 71)
+        cell.delegate = self;
+        let footerView = UIView(frame: cell.frame)
+        footerView.addSubview(cell)
+        return footerView
+    }
+    
+    override func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 71
+    }
+
+    func textFieldShouldReturn(textField: UITextField!) -> Bool {
+        self.view.endEditing(true)
+        return true
+    }
+
+    func textFieldDidBeginEditing(textField: UITextField!) {
+        self.performSelector(Selector("scrollToBottom"), withObject: nil, afterDelay: 0.3)
+    }
+    
+    func scrollToBottom() {
+        let lastIndexPath = NSIndexPath(forRow: stubData.count - 1, inSection: 0)
+        chatTableView.scrollToRowAtIndexPath(lastIndexPath, atScrollPosition: UITableViewScrollPosition.None, animated: true)
+    }
+    
+    func sendChat(chatMessage: NSString) {
+        self.view.endEditing(true)
+        self.performSelector(Selector("scrollToBottom"), withObject: nil, afterDelay: 0.3)
+        let messageToBeSent = chatMessage.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()) as  NSString!
+        if messageToBeSent.length != 0 {
+            print(messageToBeSent)
+        }
     }
 }
