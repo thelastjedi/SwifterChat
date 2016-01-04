@@ -1,13 +1,96 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AZQ-CF-7ta">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
+        <!--Chat with yourself-->
+        <scene sceneID="OYL-2r-lkq">
+            <objects>
+                <tableViewController storyboardIdentifier="TableVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="nZz-F1-saG" customClass="TableViewController" customModule="SwifterChat" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="s5p-7g-udy">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChatBubbleCell" rowHeight="347" id="bzu-Fj-blp" customClass="ChatBubbleCell" customModule="SwifterChat" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="600" height="347"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bzu-Fj-blp" id="Mh3-GC-Ker">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="346.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cloudBubble" translatesAutoresizingMaskIntoConstraints="NO" id="xBH-1d-wEh">
+                                            <rect key="frame" x="50" y="8" width="282" height="269"/>
+                                            <rect key="contentStretch" x="0.34999999999999998" y="0.45000000000000001" width="0.25" height="0.0"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="282" id="5hc-bc-ORw"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1/1/2016" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6wz-8j-z05">
+                                            <rect key="frame" x="239" y="317" width="140" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="dJd-qr-He4"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="K8A-49-2gf">
+                                            <rect key="frame" x="0.0" y="286" width="60" height="60"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="60" id="3dS-Ff-AoF"/>
+                                                <constraint firstAttribute="width" constant="60" id="QJQ-fp-Zew"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is a chat message." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cLi-GE-jbf">
+                                            <rect key="frame" x="101" y="71" width="181" height="101.5"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="181" id="BHV-mT-8W7"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="K8A-49-2gf" firstAttribute="leading" secondItem="Mh3-GC-Ker" secondAttribute="leading" id="6km-9L-gr0"/>
+                                        <constraint firstItem="xBH-1d-wEh" firstAttribute="leading" secondItem="Mh3-GC-Ker" secondAttribute="leading" constant="50" id="Elw-dl-69a"/>
+                                        <constraint firstItem="6wz-8j-z05" firstAttribute="leading" secondItem="K8A-49-2gf" secondAttribute="trailing" constant="179" id="FRT-iK-rT1"/>
+                                        <constraint firstItem="6wz-8j-z05" firstAttribute="top" secondItem="cLi-GE-jbf" secondAttribute="bottom" constant="144.5" id="Goe-sW-Lgw"/>
+                                        <constraint firstAttribute="bottom" secondItem="6wz-8j-z05" secondAttribute="bottom" constant="8.5" id="MOn-ZP-3uZ"/>
+                                        <constraint firstAttribute="trailing" secondItem="cLi-GE-jbf" secondAttribute="trailing" constant="318" id="PLC-gg-Eo0"/>
+                                        <constraint firstAttribute="trailing" secondItem="6wz-8j-z05" secondAttribute="trailing" constant="221" id="PMp-C5-pqa"/>
+                                        <constraint firstItem="xBH-1d-wEh" firstAttribute="top" secondItem="Mh3-GC-Ker" secondAttribute="top" constant="8" id="Rlb-09-WwG"/>
+                                        <constraint firstItem="cLi-GE-jbf" firstAttribute="leading" secondItem="Mh3-GC-Ker" secondAttribute="leading" constant="101" id="W3f-wU-dac"/>
+                                        <constraint firstAttribute="bottom" secondItem="K8A-49-2gf" secondAttribute="bottom" constant="0.5" id="Z85-gN-uhi"/>
+                                        <constraint firstItem="cLi-GE-jbf" firstAttribute="top" secondItem="Mh3-GC-Ker" secondAttribute="top" constant="71" id="eLX-eZ-Evt"/>
+                                        <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="xBH-1d-wEh" secondAttribute="trailing" constant="268" id="mL8-vy-7aa"/>
+                                        <constraint firstItem="K8A-49-2gf" firstAttribute="top" secondItem="xBH-1d-wEh" secondAttribute="bottom" constant="9" id="n1H-g7-3Ae"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="chatMessage" destination="cLi-GE-jbf" id="a8A-bk-vED"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="nZz-F1-saG" id="Mmz-5r-wbm"/>
+                            <outlet property="delegate" destination="nZz-F1-saG" id="u2N-HT-3ow"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Chat with yourself" id="iXx-2T-OTS"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nxq-sS-zzy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="969" y="-459"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SwifterChat" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -21,5 +104,27 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="8m0-I5-27m">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="AZQ-CF-7ta" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="orY-HN-k1j">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="nZz-F1-saG" kind="relationship" relationship="rootViewController" id="8db-wb-RdN"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cA3-jb-QRY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="157" y="-459"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="cloudBubble" width="296" height="242"/>
+        <image name="placeholder" width="87" height="87"/>
+    </resources>
 </document>

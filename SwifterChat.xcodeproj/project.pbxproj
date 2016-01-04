@@ -12,6 +12,8 @@
 		3E03AAC41C39647F00336938 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E03AAC21C39647F00336938 /* Main.storyboard */; };
 		3E03AAC61C39647F00336938 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E03AAC51C39647F00336938 /* Assets.xcassets */; };
 		3E03AAC91C39647F00336938 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E03AAC71C39647F00336938 /* LaunchScreen.storyboard */; };
+		3EE389C41C3A7F640022FDC3 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE389C31C3A7F640022FDC3 /* TableViewController.swift */; };
+		3EE389C81C3A80B20022FDC3 /* ChatBubbleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE389C71C3A80B20022FDC3 /* ChatBubbleCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		3E03AAC51C39647F00336938 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3E03AAC81C39647F00336938 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3E03AACA1C39647F00336938 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3EE389C31C3A7F640022FDC3 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		3EE389C71C3A80B20022FDC3 /* ChatBubbleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatBubbleCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,8 @@
 			children = (
 				3E03AABE1C39647F00336938 /* AppDelegate.swift */,
 				3E03AAC01C39647F00336938 /* ViewController.swift */,
+				3EE389C31C3A7F640022FDC3 /* TableViewController.swift */,
+				3EE389C71C3A80B20022FDC3 /* ChatBubbleCell.swift */,
 				3E03AAC21C39647F00336938 /* Main.storyboard */,
 				3E03AAC51C39647F00336938 /* Assets.xcassets */,
 				3E03AAC71C39647F00336938 /* LaunchScreen.storyboard */,
@@ -136,7 +142,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E03AAC11C39647F00336938 /* ViewController.swift in Sources */,
+				3EE389C41C3A7F640022FDC3 /* TableViewController.swift in Sources */,
 				3E03AABF1C39647F00336938 /* AppDelegate.swift in Sources */,
+				3EE389C81C3A80B20022FDC3 /* ChatBubbleCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,6 +292,7 @@
 				3E03AACF1C39647F00336938 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
