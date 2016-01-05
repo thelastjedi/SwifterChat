@@ -23,7 +23,10 @@ class TableDataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
     
     // MARK: -
     
-    
+
+    /**
+    Refresh chat data
+    */
     func refreshDataSource() {
         stubData = chatData.chatMessages
     }

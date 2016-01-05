@@ -19,7 +19,7 @@ class TableViewController: UITableViewController, ChatFooterDelegate {
         
         //Setup table
         
-        //Using auto layouts for dynamic cell sizes
+        //Using auto layout for dynamic cell sizes
         tableView.estimatedRowHeight = 347
         tableView.rowHeight = UITableViewAutomaticDimension
         
@@ -63,6 +63,10 @@ class TableViewController: UITableViewController, ChatFooterDelegate {
     
     // MARK: -
     
+    /**
+    For n rows, perform `scrollToRowAtIndexPath(indexPath: NSIndexPath, atScrollPosition scrollPosition: UITableViewScrollPosition, animated: Bool)` till **n-2th** row with the below variable `animated` followed by scrolling till **n-1th** row with animated: `true`
+    - parameter animated: animated bool for scrollToRowAtIndexPath for **n-2th** row
+    */
     func scrollToBottom(animated : AnyObject) {
         //to
         let delay = TVCScrollAnimationDelay * Double(NSEC_PER_SEC)

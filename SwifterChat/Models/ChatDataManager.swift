@@ -31,6 +31,11 @@ class ChatDataManager {
         ChatEntry(chatMessage: "Pursued by the Empire's sinister agents, Princess Leia races home aboard her starship, custodian of the stolen plans that can save her people and restore freedom to the galaxy.", outgoingMessage: false),]
     
     
+    /**
+     Add `ChatEntry` object in chatMessages array
+     - parameter chatMessage: content of chat message
+     - parameter outgoingMessage: boolean based on incoming/outgoing status
+     */
     func addNewChat(chatMessage : NSString, outgoingMessage: Bool) {
         chatMessages.append(ChatEntry(chatMessage: chatMessage, outgoingMessage: outgoingMessage))
     }
