@@ -28,7 +28,7 @@
                                                 <constraint firstAttribute="width" constant="282" id="5hc-bc-ORw"/>
                                             </constraints>
                                         </imageView>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="K8A-49-2gf">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Circle" translatesAutoresizingMaskIntoConstraints="NO" id="K8A-49-2gf">
                                             <rect key="frame" x="0.0" y="286" width="60" height="60"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="60" id="3dS-Ff-AoF"/>
@@ -44,12 +44,12 @@
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="1/1/2016, 12:10 PM Z" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6wz-8j-z05">
-                                            <rect key="frame" x="68" y="318" width="136" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1/1/2016, 12:10 PM Z" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6wz-8j-z05">
+                                            <rect key="frame" x="68" y="306" width="99.5" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="dJd-qr-He4"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                             <color key="textColor" red="0.34901960784313724" green="0.50196078431372548" blue="0.63921568627450975" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -59,8 +59,8 @@
                                         <constraint firstItem="K8A-49-2gf" firstAttribute="leading" secondItem="Mh3-GC-Ker" secondAttribute="leading" id="6km-9L-gr0"/>
                                         <constraint firstItem="xBH-1d-wEh" firstAttribute="leading" secondItem="Mh3-GC-Ker" secondAttribute="leading" constant="50" id="Elw-dl-69a"/>
                                         <constraint firstItem="6wz-8j-z05" firstAttribute="leading" secondItem="K8A-49-2gf" secondAttribute="trailing" constant="8" id="FRT-iK-rT1"/>
-                                        <constraint firstItem="6wz-8j-z05" firstAttribute="top" secondItem="cLi-GE-jbf" secondAttribute="bottom" constant="145.5" id="Goe-sW-Lgw"/>
-                                        <constraint firstAttribute="bottom" secondItem="6wz-8j-z05" secondAttribute="bottom" constant="8.5" id="MOn-ZP-3uZ"/>
+                                        <constraint firstItem="6wz-8j-z05" firstAttribute="top" secondItem="cLi-GE-jbf" secondAttribute="bottom" constant="133.5" id="Goe-sW-Lgw"/>
+                                        <constraint firstAttribute="bottom" secondItem="6wz-8j-z05" secondAttribute="bottom" constant="20" id="MOn-ZP-3uZ"/>
                                         <constraint firstAttribute="trailing" secondItem="cLi-GE-jbf" secondAttribute="trailing" constant="318" id="PLC-gg-Eo0"/>
                                         <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="6wz-8j-z05" secondAttribute="trailing" constant="201" id="PMp-C5-pqa"/>
                                         <constraint firstItem="xBH-1d-wEh" firstAttribute="top" secondItem="Mh3-GC-Ker" secondAttribute="top" constant="8" id="Rlb-09-WwG"/>
@@ -185,7 +185,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Circle" width="87" height="87"/>
         <image name="cloudBubble" width="296" height="242"/>
-        <image name="placeholder" width="87" height="87"/>
     </resources>
 </document>

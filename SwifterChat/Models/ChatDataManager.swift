@@ -20,12 +20,7 @@ class ChatDataManager {
             self.chatMessage = chatMessage
             self.outgoingMessage = outgoingMessage
             timeStamp = NSDate()
-            if outgoingMessage {
-                profilePicture = "placeholder"
-            }
-            else {
-                profilePicture = "placeholder"
-            }
+            profilePicture = outgoingMessage ? "Cross" : "Circle"
         }
         
     }
