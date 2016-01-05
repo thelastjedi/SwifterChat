@@ -6,20 +6,6 @@
       "scale" : "1x"
     },
     {
-      "resizing" : {
-        "mode" : "9-part",
-        "center" : {
-          "mode" : "tile",
-          "width" : 3,
-          "height" : 1
-        },
-        "cap-insets" : {
-          "bottom" : 201,
-          "top" : 119,
-          "right" : 144,
-          "left" : 113
-        }
-      },
       "idiom" : "universal",
       "filename" : "cloudBubble@2x.png",
       "scale" : "2x"

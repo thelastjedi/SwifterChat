@@ -17,14 +17,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="splashCloudBubble" translatesAutoresizingMaskIntoConstraints="NO" id="pME-Ut-QuY">
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="splashCloudBubble" translatesAutoresizingMaskIntoConstraints="NO" id="6bR-Me-xEn">
                                 <rect key="frame" x="152" y="179" width="296" height="242"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.80784313725490198" green="0.9137254901960784" blue="0.93725490196078431" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="pME-Ut-QuY" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="8LC-a6-OcB"/>
-                            <constraint firstItem="pME-Ut-QuY" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="shr-uy-Gvo"/>
+                            <constraint firstItem="6bR-Me-xEn" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="BUg-82-Zfo"/>
+                            <constraint firstItem="6bR-Me-xEn" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="s5q-bR-83Y"/>
                         </constraints>
                     </view>
                 </viewController>
