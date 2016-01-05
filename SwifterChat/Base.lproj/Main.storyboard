@@ -41,7 +41,7 @@
                                                 <constraint firstAttribute="width" constant="181" id="BHV-mT-8W7"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1/1/2016, 12:10 PM Z" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6wz-8j-z05">
@@ -61,7 +61,7 @@
                                         <constraint firstItem="6wz-8j-z05" firstAttribute="leading" secondItem="K8A-49-2gf" secondAttribute="trailing" constant="8" id="FRT-iK-rT1"/>
                                         <constraint firstItem="6wz-8j-z05" firstAttribute="top" secondItem="cLi-GE-jbf" secondAttribute="bottom" constant="133.5" id="Goe-sW-Lgw"/>
                                         <constraint firstAttribute="bottom" secondItem="6wz-8j-z05" secondAttribute="bottom" constant="20" id="MOn-ZP-3uZ"/>
-                                        <constraint firstAttribute="trailing" secondItem="cLi-GE-jbf" secondAttribute="trailing" constant="318" id="PLC-gg-Eo0"/>
+                                        <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="cLi-GE-jbf" secondAttribute="trailing" constant="318" id="PLC-gg-Eo0"/>
                                         <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="6wz-8j-z05" secondAttribute="trailing" constant="201" id="PMp-C5-pqa"/>
                                         <constraint firstItem="xBH-1d-wEh" firstAttribute="top" secondItem="Mh3-GC-Ker" secondAttribute="top" constant="8" id="Rlb-09-WwG"/>
                                         <constraint firstItem="cLi-GE-jbf" firstAttribute="leading" secondItem="Mh3-GC-Ker" secondAttribute="leading" constant="101" id="W3f-wU-dac"/>
