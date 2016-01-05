@@ -11,7 +11,9 @@ import UIKit
 class TableViewController: UITableViewController, ChatFooterDelegate {
 
     var tableDataSource: TableDataSource?
-
+    let scrollToBottomSelector = "scrollToBottom:"
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -34,19 +36,6 @@ class TableViewController: UITableViewController, ChatFooterDelegate {
     }
 
     
-    // MARK: -
-    
-    func scrollToBottom(animated : AnyObject) {
-        //to
-        let delay = 0.1 * Double(NSEC_PER_SEC)
-        let time = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
-        
-        dispatch_after(time, dispatch_get_main_queue(), {
-            self.tableView.scrollToRowAtIndexPath(NSIndexPath(forRow: (self.tableDataSource?.stubData.count)! - 2, inSection: 0), atScrollPosition: .Bottom, animated: animated.boolValue)
-            self.tableView.scrollToRowAtIndexPath(NSIndexPath(forRow: (self.tableDataSource?.stubData.count)! - 1, inSection: 0), atScrollPosition: .Bottom, animated: true)
-        })
-    }
-    
     // MARK: - UITextField delegate
     
     func textFieldShouldReturn(textField: UITextField!) -> Bool {
@@ -55,7 +44,7 @@ class TableViewController: UITableViewController, ChatFooterDelegate {
     }
 
     func textFieldDidBeginEditing(textField: UITextField!) {
-        self.performSelector(Selector("scrollToBottom:"), withObject: true.hashValue, afterDelay: 0.5)
+        self.performSelector(Selector(scrollToBottomSelector), withObject: true.hashValue, afterDelay: TVCScrollSelectorDelay)
     }
     
     // MARK: - ChatFooterDelegate
@@ -68,7 +57,22 @@ class TableViewController: UITableViewController, ChatFooterDelegate {
         else {
             tableDataSource!.insertNewChatMessage(messageToBeSent)
             self.tableView.reloadData()
-            self.performSelector(Selector("scrollToBottom:"), withObject: false, afterDelay: 0.5)
+            self.performSelector(Selector(scrollToBottomSelector), withObject: false, afterDelay: TVCScrollSelectorDelay)
         }
     }
+    
+    // MARK: -
+    
+    func scrollToBottom(animated : AnyObject) {
+        //to
+        let delay = TVCScrollAnimationDelay * Double(NSEC_PER_SEC)
+        let time = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
+        
+        dispatch_after(time, dispatch_get_main_queue(), {
+            self.tableView.scrollToRowAtIndexPath(NSIndexPath(forRow: (self.tableDataSource?.stubData.count)! - 2, inSection: 0), atScrollPosition: .Bottom, animated: animated.boolValue)
+            self.tableView.scrollToRowAtIndexPath(NSIndexPath(forRow: (self.tableDataSource?.stubData.count)! - 1, inSection: 0), atScrollPosition: .Bottom, animated: true)
+        })
+    }
+    
+
 }

@@ -30,7 +30,7 @@ class TableDataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
     
     
     func insertNewChatMessage(chatMessage: NSString) {
-        print("Sending message: \(chatMessage)")
+        print("Sending chat message: \(chatMessage)")
         chatData.addNewChat(chatMessage, outgoingMessage: true)
         refreshDataSource()
     }
@@ -50,7 +50,7 @@ class TableDataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
     
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("ChatBubbleCell", forIndexPath: indexPath) as! ChatBubbleCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(ChatBubbleCellIdentifier, forIndexPath: indexPath) as! ChatBubbleCell
         let chat = stubData[indexPath.row]
         cell.chatLabel.text = chat.chatMessage as String
         let dateFormatter = NSDateFormatter()
@@ -71,7 +71,7 @@ class TableDataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
             return cellHeight[indexPath.row]
         }
         
-        let sizingCell = tableView.dequeueReusableCellWithIdentifier("ChatBubbleCell") as! ChatBubbleCell
+        let sizingCell = tableView.dequeueReusableCellWithIdentifier(ChatBubbleCellIdentifier) as! ChatBubbleCell
         let chat = stubData[indexPath.row]
         sizingCell.chatLabel.text = chat.chatMessage as String
         sizingCell.setNeedsLayout()
@@ -83,7 +83,7 @@ class TableDataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
 
     
     func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        let cell = tableView.dequeueReusableCellWithIdentifier("ChatFooterView") as! ChatFooterView
+        let cell = tableView.dequeueReusableCellWithIdentifier(ChatFooterIdentifier) as! ChatFooterView
         cell.delegate = parentViewRef
         cell.frame = CGRectMake(0, 0, CGRectGetWidth(tableView.frame), 71)
         let footerView = UIView(frame: cell.frame)

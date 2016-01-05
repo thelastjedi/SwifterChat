@@ -15,6 +15,7 @@
 		3E6EFB4F1C3C20F8007ADE67 /* TableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6EFB4E1C3C20F8007ADE67 /* TableDataSource.swift */; };
 		3E6EFB551C3C29AF007ADE67 /* ChatBubbleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6EFB531C3C29AF007ADE67 /* ChatBubbleCell.swift */; };
 		3E6EFB561C3C29AF007ADE67 /* ChatFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6EFB541C3C29AF007ADE67 /* ChatFooterView.swift */; };
+		3E6EFB581C3C3335007ADE67 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6EFB571C3C3335007ADE67 /* Constants.swift */; };
 		3EE389C41C3A7F640022FDC3 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE389C31C3A7F640022FDC3 /* TableViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +30,7 @@
 		3E6EFB4E1C3C20F8007ADE67 /* TableDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableDataSource.swift; sourceTree = "<group>"; };
 		3E6EFB531C3C29AF007ADE67 /* ChatBubbleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatBubbleCell.swift; sourceTree = "<group>"; };
 		3E6EFB541C3C29AF007ADE67 /* ChatFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatFooterView.swift; sourceTree = "<group>"; };
+		3E6EFB571C3C3335007ADE67 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		3EE389C31C3A7F640022FDC3 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -70,6 +72,7 @@
 				3E03AAC51C39647F00336938 /* Assets.xcassets */,
 				3E03AAC71C39647F00336938 /* LaunchScreen.storyboard */,
 				3E03AACA1C39647F00336938 /* Info.plist */,
+				3E6EFB571C3C3335007ADE67 /* Constants.swift */,
 			);
 			path = SwifterChat;
 			sourceTree = "<group>";
@@ -167,6 +170,7 @@
 				3E6EFB551C3C29AF007ADE67 /* ChatBubbleCell.swift in Sources */,
 				3E6EFB4F1C3C20F8007ADE67 /* TableDataSource.swift in Sources */,
 				3E6EFB561C3C29AF007ADE67 /* ChatFooterView.swift in Sources */,
+				3E6EFB581C3C3335007ADE67 /* Constants.swift in Sources */,
 				3E03AABF1C39647F00336938 /* AppDelegate.swift in Sources */,
 				3E6EFB4D1C3C20EE007ADE67 /* ChatDataManager.swift in Sources */,
 			);
