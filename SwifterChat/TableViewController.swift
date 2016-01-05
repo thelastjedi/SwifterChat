@@ -10,15 +10,20 @@ import UIKit
 
 class TableViewController: UITableViewController, ChatFooterDelegate {
 
-    let stubData = ChatDataManager()
+    let chatData = ChatDataManager()
+    var stubData : [ChatDataManager.ChatEntry] = []
+    var cellHeight: [CGFloat] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
         tableView.estimatedRowHeight = 347
         tableView.rowHeight = UITableViewAutomaticDimension
+        refreshDataSource()
         tableView.reloadData()
+    }
+    
+    func refreshDataSource() {
+        stubData = chatData.chatMessages
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,13 +37,13 @@ class TableViewController: UITableViewController, ChatFooterDelegate {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return stubData.chatMessages.count
+        return stubData.count
     }
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("ChatBubbleCell", forIndexPath: indexPath) as! ChatBubbleCell
-        let chat = stubData.chatMessages[indexPath.row]
+        let chat = stubData[indexPath.row]
         cell.chatLabel.text = chat.chatMessage as String
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateStyle = .ShortStyle
@@ -59,7 +64,22 @@ class TableViewController: UITableViewController, ChatFooterDelegate {
     override func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 71
     }
+    
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        if cellHeight.count > indexPath.row {
+            return cellHeight[indexPath.row]
+        }
 
+        let sizingCell = self.tableView.dequeueReusableCellWithIdentifier("ChatBubbleCell") as! ChatBubbleCell
+        let chat = stubData[indexPath.row]
+        sizingCell.chatLabel.text = chat.chatMessage as String
+        sizingCell.setNeedsLayout()
+        sizingCell.layoutIfNeeded()
+        let height = sizingCell.contentView.systemLayoutSizeFittingSize(UILayoutFittingCompressedSize).height;
+        cellHeight.append(height)
+        return height;
+    }
+    
     func textFieldShouldReturn(textField: UITextField!) -> Bool {
         self.view.endEditing(true)
         return true
@@ -70,7 +90,7 @@ class TableViewController: UITableViewController, ChatFooterDelegate {
     }
     
     func scrollToBottom() {
-        let lastIndexPath = NSIndexPath(forRow: stubData.chatMessages.count - 1, inSection: 0)
+        let lastIndexPath = NSIndexPath(forRow: stubData.count - 1, inSection: 0)
         self.tableView.scrollToRowAtIndexPath(lastIndexPath, atScrollPosition: UITableViewScrollPosition.None, animated: true)
     }
     
@@ -78,7 +98,8 @@ class TableViewController: UITableViewController, ChatFooterDelegate {
         let messageToBeSent = chatMessage.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()) as  NSString!
         if messageToBeSent.length != 0 {
             print("Sending message: \(messageToBeSent)")
-            stubData.addNewChat(messageToBeSent, outgoingMessage: true)
+            chatData.addNewChat(messageToBeSent, outgoingMessage: true)
+            refreshDataSource()
             self.tableView.reloadData()
         }
         else {
