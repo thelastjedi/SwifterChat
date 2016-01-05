@@ -12,7 +12,7 @@ protocol ChatFooterDelegate {
     func sendChat(chatMessage : NSString)
 }
 
-class ChatFooterView: UITableViewCell{
+class ChatFooterView: UITableViewCell {
 
     var delegate:ChatFooterDelegate?
     
@@ -29,8 +29,6 @@ class ChatFooterView: UITableViewCell{
 
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
         
 
