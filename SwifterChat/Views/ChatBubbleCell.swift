@@ -12,6 +12,7 @@ class ChatBubbleCell: UITableViewCell {
 
     @IBOutlet var chatLabel: UILabel!
     @IBOutlet var timeStampLabel: UILabel!
+    @IBOutlet var userThumbnail: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -31,7 +31,7 @@ class TableDataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
     
     func insertNewChatMessage(chatMessage: NSString) {
         print("Sending chat message: \(chatMessage)")
-        chatData.addNewChat(chatMessage, outgoingMessage: true)
+        chatData.addNewChat(chatMessage, outgoingMessage: (stubData.count%2) == 0)
         refreshDataSource()
     }
     
@@ -57,6 +57,8 @@ class TableDataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
         dateFormatter.dateStyle = .ShortStyle
         dateFormatter.timeStyle = .ShortStyle
         cell.timeStampLabel.text = dateFormatter.stringFromDate(chat.timeStamp) as String
+        let chatThumb = UIImage(named: (chat.profilePicture as String))! as UIImage
+        cell.userThumbnail.image = chatThumb
         return cell
     }
     

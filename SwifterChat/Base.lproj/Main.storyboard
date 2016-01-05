@@ -74,6 +74,7 @@
                                 <connections>
                                     <outlet property="chatLabel" destination="cLi-GE-jbf" id="tvf-Tz-nas"/>
                                     <outlet property="timeStampLabel" destination="6wz-8j-z05" id="HLJ-q5-M57"/>
+                                    <outlet property="userThumbnail" destination="K8A-49-2gf" id="lfC-ht-F6e"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChatFooterView" rowHeight="71" id="poV-bP-yyw" customClass="ChatFooterView" customModule="SwifterChat" customModuleProvider="target">
@@ -105,10 +106,11 @@
                                                 <blurEffect style="light"/>
                                             </vibrancyEffect>
                                         </visualEffectView>
-                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Chat" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uba-ia-uhl">
-                                            <rect key="frame" x="8" y="0.0" width="487" height="70.5"/>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Send Message" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uba-ia-uhl">
+                                            <rect key="frame" x="8" y="0.0" width="511" height="70.5"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="70.5" id="oj8-qi-k13"/>
+                                                <constraint firstAttribute="height" constant="70" id="oj8-qi-k13"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                             <textInputTraits key="textInputTraits"/>
@@ -117,13 +119,16 @@
                                             </connections>
                                         </textField>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k9B-bn-otp">
-                                            <rect key="frame" x="495" y="0.0" width="105" height="70.5"/>
+                                            <rect key="frame" x="519" y="0.0" width="81" height="70.5"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="105" id="Tfw-9z-WSk"/>
+                                                <constraint firstAttribute="width" constant="81" id="Tfw-9z-WSk"/>
                                                 <constraint firstAttribute="height" constant="70.5" id="Wd4-1q-NwH"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                            <state key="normal" title="Send"/>
+                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                            <state key="normal" title="Send">
+                                                <color key="titleColor" red="0.1058823529" green="0.4431372549" blue="0.87058823529999996" alpha="1" colorSpace="calibratedRGB"/>
+                                            </state>
                                             <connections>
                                                 <action selector="sendAction:" destination="poV-bP-yyw" eventType="touchUpInside" id="2Er-ju-jCI"/>
                                             </connections>
