@@ -5,11 +5,11 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
-        <!--Chat with yourself-->
+        <!--💬-->
         <scene sceneID="OYL-2r-lkq">
             <objects>
                 <tableViewController storyboardIdentifier="TableVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="nZz-F1-saG" customClass="TableViewController" customModule="SwifterChat" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="s5p-7g-udy">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="s5p-7g-udy">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -44,16 +44,17 @@
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="1/1/2016" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6wz-8j-z05">
-                                            <rect key="frame" x="68" y="318" width="51" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="1/1/2016, 12:10 PM Z" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6wz-8j-z05">
+                                            <rect key="frame" x="68" y="318" width="136" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="dJd-qr-He4"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                            <color key="textColor" red="0.8862745098" green="0.8862745098" blue="0.8862745098" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="textColor" red="0.34901960784313724" green="0.50196078431372548" blue="0.63921568627450975" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <color key="backgroundColor" red="0.80784313730000001" green="0.91372549020000005" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
                                         <constraint firstItem="K8A-49-2gf" firstAttribute="leading" secondItem="Mh3-GC-Ker" secondAttribute="leading" id="6km-9L-gr0"/>
                                         <constraint firstItem="xBH-1d-wEh" firstAttribute="leading" secondItem="Mh3-GC-Ker" secondAttribute="leading" constant="50" id="Elw-dl-69a"/>
@@ -61,7 +62,7 @@
                                         <constraint firstItem="6wz-8j-z05" firstAttribute="top" secondItem="cLi-GE-jbf" secondAttribute="bottom" constant="145.5" id="Goe-sW-Lgw"/>
                                         <constraint firstAttribute="bottom" secondItem="6wz-8j-z05" secondAttribute="bottom" constant="8.5" id="MOn-ZP-3uZ"/>
                                         <constraint firstAttribute="trailing" secondItem="cLi-GE-jbf" secondAttribute="trailing" constant="318" id="PLC-gg-Eo0"/>
-                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="6wz-8j-z05" secondAttribute="trailing" constant="221" id="PMp-C5-pqa"/>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="6wz-8j-z05" secondAttribute="trailing" constant="201" id="PMp-C5-pqa"/>
                                         <constraint firstItem="xBH-1d-wEh" firstAttribute="top" secondItem="Mh3-GC-Ker" secondAttribute="top" constant="8" id="Rlb-09-WwG"/>
                                         <constraint firstItem="cLi-GE-jbf" firstAttribute="leading" secondItem="Mh3-GC-Ker" secondAttribute="leading" constant="101" id="W3f-wU-dac"/>
                                         <constraint firstAttribute="bottom" secondItem="K8A-49-2gf" secondAttribute="bottom" constant="0.5" id="Z85-gN-uhi"/>
@@ -82,6 +83,28 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="71"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
+                                        <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nDw-eh-ltn">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="71"/>
+                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" id="Okw-BV-G8z">
+                                                <rect key="frame" x="0.0" y="0.0" width="600" height="71"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <subviews>
+                                                    <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ai5-iD-noq">
+                                                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" id="Z7z-e5-oiu">
+                                                            <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                        </view>
+                                                        <vibrancyEffect>
+                                                            <blurEffect style="light"/>
+                                                        </vibrancyEffect>
+                                                    </visualEffectView>
+                                                </subviews>
+                                            </view>
+                                            <vibrancyEffect>
+                                                <blurEffect style="light"/>
+                                            </vibrancyEffect>
+                                        </visualEffectView>
                                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Chat" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uba-ia-uhl">
                                             <rect key="frame" x="8" y="0.0" width="487" height="70.5"/>
                                             <constraints>
@@ -106,6 +129,7 @@
                                             </connections>
                                         </button>
                                     </subviews>
+                                    <color key="backgroundColor" red="0.80784313725490198" green="0.9137254901960784" blue="0.93725490196078431" alpha="0.5" colorSpace="calibratedRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="trailing" secondItem="k9B-bn-otp" secondAttribute="trailing" id="Nds-bN-UNn"/>
                                         <constraint firstAttribute="bottom" secondItem="k9B-bn-otp" secondAttribute="bottom" id="R2e-PY-46c"/>
@@ -135,7 +159,7 @@
                             <outlet property="delegate" destination="nZz-F1-saG" id="u2N-HT-3ow"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Chat with yourself" id="iXx-2T-OTS"/>
+                    <navigationItem key="navigationItem" title="💬" id="iXx-2T-OTS"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nxq-sS-zzy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
