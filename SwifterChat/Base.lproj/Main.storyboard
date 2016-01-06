@@ -109,9 +109,6 @@
                                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Send Message" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uba-ia-uhl">
                                             <rect key="frame" x="8" y="0.0" width="511" height="70.5"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="70" id="oj8-qi-k13"/>
-                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                             <textInputTraits key="textInputTraits"/>
                                             <connections>
@@ -123,7 +120,6 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="81" id="Tfw-9z-WSk"/>
-                                                <constraint firstAttribute="height" constant="70.5" id="Wd4-1q-NwH"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                             <state key="normal" title="Send">
@@ -140,17 +136,10 @@
                                         <constraint firstAttribute="bottom" secondItem="k9B-bn-otp" secondAttribute="bottom" id="R2e-PY-46c"/>
                                         <constraint firstAttribute="bottom" secondItem="uba-ia-uhl" secondAttribute="bottom" id="Ytm-Nj-Pm4"/>
                                         <constraint firstItem="uba-ia-uhl" firstAttribute="leading" secondItem="B0O-eM-pWz" secondAttribute="leading" constant="8" id="Zfq-Tu-bh3"/>
-                                        <constraint firstItem="uba-ia-uhl" firstAttribute="leading" secondItem="B0O-eM-pWz" secondAttribute="leading" id="cBe-My-hgF"/>
                                         <constraint firstItem="k9B-bn-otp" firstAttribute="leading" secondItem="uba-ia-uhl" secondAttribute="trailing" id="n9M-SZ-spc"/>
-                                        <constraint firstItem="k9B-bn-otp" firstAttribute="leading" secondItem="uba-ia-uhl" secondAttribute="trailing" id="teo-wD-hZb"/>
                                         <constraint firstItem="uba-ia-uhl" firstAttribute="top" secondItem="B0O-eM-pWz" secondAttribute="top" id="uph-Od-kn5"/>
                                         <constraint firstItem="k9B-bn-otp" firstAttribute="top" secondItem="B0O-eM-pWz" secondAttribute="top" id="vkp-gg-qHB"/>
                                     </constraints>
-                                    <variation key="default">
-                                        <mask key="constraints">
-                                            <exclude reference="cBe-My-hgF"/>
-                                        </mask>
-                                    </variation>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="chatInputField" destination="uba-ia-uhl" id="pnQ-eL-zY9"/>
