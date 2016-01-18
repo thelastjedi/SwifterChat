@@ -34,7 +34,7 @@ class TableDataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
     
     func insertNewChatMessage(chatMessage: NSString) {
         print("Sending chat message: \(chatMessage)")
-        chatData.addNewChat(chatMessage, outgoingMessage: (stubData.count%2) == 0)
+        chatData.addNewChat(chatMessage)
         refreshDataSource()
     }
     
