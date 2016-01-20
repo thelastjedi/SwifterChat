@@ -12,8 +12,8 @@ import UIKit
 class TableDataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
     
     let chatData = ChatDataManager()
-    var stubData : [ChatDataManager.ChatEntry] = []
-    
+
+    var stubData = [Thought]()
     var cellHeight: [CGFloat] = []
     
     
@@ -25,16 +25,16 @@ class TableDataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
     
 
     /**
-    Refresh chat data
+    Refresh messages
     */
     func refreshDataSource() {
-        stubData = chatData.chatMessages
+        stubData = chatData.thoughtArray()
     }
     
     
-    func insertNewChatMessage(chatMessage: NSString) {
-        print("Sending chat message: \(chatMessage)")
-        chatData.addNewChat(chatMessage)
+    func insertNewThought(message: NSString) {
+        print("adding new message: \(message)")
+        chatData.addNewThought(message)
         refreshDataSource()
     }
     
@@ -54,14 +54,12 @@ class TableDataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(ChatBubbleCellIdentifier, forIndexPath: indexPath) as! ChatBubbleCell
-        let chat = stubData[indexPath.row]
-        cell.chatLabel.text = chat.chatMessage as String
+        let thought = stubData[indexPath.row]
+        cell.chatLabel.text = thought.message as String
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateStyle = .ShortStyle
         dateFormatter.timeStyle = .ShortStyle
-        cell.timeStampLabel.text = dateFormatter.stringFromDate(chat.timeStamp) as String
-        let chatThumb = UIImage(named: (chat.profilePicture as String))! as UIImage
-        cell.userThumbnail.image = chatThumb
+        cell.timeStampLabel.text = dateFormatter.stringFromDate(thought.timeStamp) as String
         return cell
     }
     
@@ -78,7 +76,7 @@ class TableDataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
         
         let sizingCell = tableView.dequeueReusableCellWithIdentifier(ChatBubbleCellIdentifier) as! ChatBubbleCell
         let chat = stubData[indexPath.row]
-        sizingCell.chatLabel.text = chat.chatMessage as String
+        sizingCell.chatLabel.text = chat.message as String
         sizingCell.setNeedsLayout()
         sizingCell.layoutIfNeeded()
         let height = sizingCell.contentView.systemLayoutSizeFittingSize(UILayoutFittingCompressedSize).height;

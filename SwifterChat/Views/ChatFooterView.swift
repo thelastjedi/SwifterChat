@@ -10,10 +10,10 @@ import UIKit
 
 protocol ChatFooterDelegate {
      /**
-     Send chat message and update conversation table
-    - parameter chatMessage: `chatInputField` text
+     Send message and update main message table
+    - parameter message: `chatInputField` text
     */
-    func sendChat(chatMessage : NSString)
+    func sendChat(message : NSString)
 }
 
 class ChatFooterView: UITableViewCell {

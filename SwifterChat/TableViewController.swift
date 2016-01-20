@@ -49,13 +49,13 @@ class TableViewController: UITableViewController, ChatFooterDelegate {
     
     // MARK: - ChatFooterDelegate
     
-    func sendChat(chatMessage: NSString) {
-        let messageToBeSent = chatMessage.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()) as  String!
+    func sendChat(message: NSString) {
+        let messageToBeSent = message.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()) as  String!
         if messageToBeSent.isEmpty {
             self.view.endEditing(true)
         }
         else {
-            tableDataSource!.insertNewChatMessage(messageToBeSent)
+            tableDataSource!.insertNewThought(messageToBeSent)
             self.tableView.reloadData()
             self.performSelector(Selector(scrollToBottomSelector), withObject: false, afterDelay: TVCScrollSelectorDelay)
         }
@@ -68,6 +68,9 @@ class TableViewController: UITableViewController, ChatFooterDelegate {
     - parameter animated: animated bool for scrollToRowAtIndexPath for **n-2th** row
     */
     func scrollToBottom(animated : AnyObject) {
+        if (self.tableDataSource?.stubData.count) < 2 {
+            return
+        }
         //to
         let delay = TVCScrollAnimationDelay * Double(NSEC_PER_SEC)
         let time = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
