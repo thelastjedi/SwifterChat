@@ -88,7 +88,7 @@ class TableDataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
     func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         let cell = tableView.dequeueReusableCellWithIdentifier(ChatFooterIdentifier) as! ChatFooterView
         cell.delegate = parentViewRef
-        cell.frame = CGRectMake(0, 0, CGRectGetWidth(tableView.frame), 71)
+        cell.autoresizingMask = .FlexibleWidth
         let footerView = UIView(frame: cell.frame)
         footerView.addSubview(cell)
         return footerView
