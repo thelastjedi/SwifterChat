@@ -17,7 +17,7 @@
 		3E6EFB551C3C29AF007ADE67 /* ChatBubbleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6EFB531C3C29AF007ADE67 /* ChatBubbleCell.swift */; };
 		3E6EFB561C3C29AF007ADE67 /* ChatFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6EFB541C3C29AF007ADE67 /* ChatFooterView.swift */; };
 		3E6EFB581C3C3335007ADE67 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6EFB571C3C3335007ADE67 /* Constants.swift */; };
-		3EE389C41C3A7F640022FDC3 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE389C31C3A7F640022FDC3 /* TableViewController.swift */; };
+		3EFD50A21C5154710051FFA9 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFD50A11C5154710051FFA9 /* TableViewController.swift */; };
 		A2D28D4DE4405FA880505A44 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89068AB528A3AB57AF5B1F9E /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -36,7 +36,7 @@
 		3E6EFB531C3C29AF007ADE67 /* ChatBubbleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatBubbleCell.swift; sourceTree = "<group>"; };
 		3E6EFB541C3C29AF007ADE67 /* ChatFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatFooterView.swift; sourceTree = "<group>"; };
 		3E6EFB571C3C3335007ADE67 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		3EE389C31C3A7F640022FDC3 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		3EFD50A11C5154710051FFA9 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		89068AB528A3AB57AF5B1F9E /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -73,15 +73,15 @@
 		3E03AABD1C39647F00336938 /* SwifterChat */ = {
 			isa = PBXGroup;
 			children = (
+				3EFD50A01C5154710051FFA9 /* Controllers */,
 				3E6EFB521C3C29AF007ADE67 /* Views */,
 				3E6EFB4B1C3C20EE007ADE67 /* Models */,
 				3E03AABE1C39647F00336938 /* AppDelegate.swift */,
-				3EE389C31C3A7F640022FDC3 /* TableViewController.swift */,
+				3E6EFB571C3C3335007ADE67 /* Constants.swift */,
 				3E03AAC21C39647F00336938 /* Main.storyboard */,
 				3E03AAC51C39647F00336938 /* Assets.xcassets */,
 				3E03AAC71C39647F00336938 /* LaunchScreen.storyboard */,
 				3E03AACA1C39647F00336938 /* Info.plist */,
-				3E6EFB571C3C3335007ADE67 /* Constants.swift */,
 			);
 			path = SwifterChat;
 			sourceTree = "<group>";
@@ -103,6 +103,14 @@
 				3E6EFB541C3C29AF007ADE67 /* ChatFooterView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		3EFD50A01C5154710051FFA9 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3EFD50A11C5154710051FFA9 /* TableViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		B0079BACAA55A7E23B61736B /* Frameworks */ = {
@@ -244,13 +252,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3EE389C41C3A7F640022FDC3 /* TableViewController.swift in Sources */,
 				3E5664831C4FC4ED005AB8A4 /* Thought.swift in Sources */,
 				3E6EFB551C3C29AF007ADE67 /* ChatBubbleCell.swift in Sources */,
 				3E6EFB4F1C3C20F8007ADE67 /* TableDataSource.swift in Sources */,
 				3E6EFB561C3C29AF007ADE67 /* ChatFooterView.swift in Sources */,
 				3E6EFB581C3C3335007ADE67 /* Constants.swift in Sources */,
 				3E03AABF1C39647F00336938 /* AppDelegate.swift in Sources */,
+				3EFD50A21C5154710051FFA9 /* TableViewController.swift in Sources */,
 				3E6EFB4D1C3C20EE007ADE67 /* ChatDataManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
