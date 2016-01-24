@@ -14,8 +14,6 @@ class TableDataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
     let chatData = ChatDataManager()
 
     var stubData = [Thought]()
-    var cellHeight: [CGFloat] = []
-    
     
     //For tableFooterView delegate
     var parentViewRef:TableViewController?
@@ -69,18 +67,22 @@ class TableDataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
 
-        //use cached cell height to improve performance
-        if cellHeight.count > indexPath.row {
-            return cellHeight[indexPath.row]
-        }
+        let thought = stubData[indexPath.row]
         
+        if thought.messageHeight != 0 {
+            return thought.messageHeight;
+        }
+
         let sizingCell = tableView.dequeueReusableCellWithIdentifier(ChatBubbleCellIdentifier) as! ChatBubbleCell
         let chat = stubData[indexPath.row]
         sizingCell.chatLabel.text = chat.message as String
         sizingCell.setNeedsLayout()
         sizingCell.layoutIfNeeded()
         let height = sizingCell.contentView.systemLayoutSizeFittingSize(UILayoutFittingCompressedSize).height;
-        cellHeight.append(height)
+        try! chatData.realm.write {
+            thought.messageHeight = height
+        }
+
         return height;
     }
 

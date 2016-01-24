@@ -11,5 +11,5 @@ import RealmSwift
 class Thought: Object {
     dynamic var message: NSString = ""
     dynamic var timeStamp: NSDate = NSDate()
-    let messageHeight = RealmOptional<Float>()
+    dynamic var messageHeight : CGFloat = 0
 }
