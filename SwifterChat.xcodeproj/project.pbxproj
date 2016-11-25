@@ -18,12 +18,12 @@
 		3E6EFB561C3C29AF007ADE67 /* ChatFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6EFB541C3C29AF007ADE67 /* ChatFooterView.swift */; };
 		3E6EFB581C3C3335007ADE67 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6EFB571C3C3335007ADE67 /* Constants.swift */; };
 		3EFD50A21C5154710051FFA9 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFD50A11C5154710051FFA9 /* TableViewController.swift */; };
-		A2D28D4DE4405FA880505A44 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89068AB528A3AB57AF5B1F9E /* Pods.framework */; };
+		B5701D5810DE30723649D8B0 /* Pods_SwifterChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E36D8AE2925C77429166BF3 /* Pods_SwifterChat.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1D135494A4093158A091F592 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		2342B302888DE025E76B42DF /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		23C77985AE9E6CE1FD70C268 /* Pods-SwifterChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwifterChat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwifterChat/Pods-SwifterChat.debug.xcconfig"; sourceTree = "<group>"; };
+		3315066639A9D2718D805AEB /* Pods-SwifterChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwifterChat.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwifterChat/Pods-SwifterChat.release.xcconfig"; sourceTree = "<group>"; };
 		3E03AABB1C39647F00336938 /* SwifterChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwifterChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E03AABE1C39647F00336938 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3E03AAC31C39647F00336938 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -37,6 +37,7 @@
 		3E6EFB541C3C29AF007ADE67 /* ChatFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatFooterView.swift; sourceTree = "<group>"; };
 		3E6EFB571C3C3335007ADE67 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		3EFD50A11C5154710051FFA9 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		7E36D8AE2925C77429166BF3 /* Pods_SwifterChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwifterChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		89068AB528A3AB57AF5B1F9E /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -45,20 +46,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A2D28D4DE4405FA880505A44 /* Pods.framework in Frameworks */,
+				B5701D5810DE30723649D8B0 /* Pods_SwifterChat.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0DC3B7DE46A7B43527BE0FD7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				23C77985AE9E6CE1FD70C268 /* Pods-SwifterChat.debug.xcconfig */,
+				3315066639A9D2718D805AEB /* Pods-SwifterChat.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		3E03AAB21C39647F00336938 = {
 			isa = PBXGroup;
 			children = (
 				3E03AABD1C39647F00336938 /* SwifterChat */,
 				3E03AABC1C39647F00336938 /* Products */,
-				E240317FAC4FC574DA096887 /* Pods */,
 				B0079BACAA55A7E23B61736B /* Frameworks */,
+				0DC3B7DE46A7B43527BE0FD7 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -117,17 +127,9 @@
 			isa = PBXGroup;
 			children = (
 				89068AB528A3AB57AF5B1F9E /* Pods.framework */,
+				7E36D8AE2925C77429166BF3 /* Pods_SwifterChat.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		E240317FAC4FC574DA096887 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				1D135494A4093158A091F592 /* Pods.debug.xcconfig */,
-				2342B302888DE025E76B42DF /* Pods.release.xcconfig */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,12 +139,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3E03AACD1C39647F00336938 /* Build configuration list for PBXNativeTarget "SwifterChat" */;
 			buildPhases = (
-				7B73E0BD7038A82E5B67A1B4 /* Check Pods Manifest.lock */,
+				40136D1A504A6EB723C47952 /* [CP] Check Pods Manifest.lock */,
 				3E03AAB71C39647F00336938 /* Sources */,
 				3E03AAB81C39647F00336938 /* Frameworks */,
 				3E03AAB91C39647F00336938 /* Resources */,
-				5AD8F0FEDFE1F868DD763852 /* Embed Pods Frameworks */,
-				8A3D4BD969A4E9C3122CA80E /* Copy Pods Resources */,
+				8476AB2AE5E378D9490996FA /* [CP] Embed Pods Frameworks */,
+				5CC1ACC12D7FB3769C3C2362 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -160,11 +162,12 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = HC;
 				TargetAttributes = {
 					3E03AABA1C39647F00336938 = {
 						CreatedOnToolsVersion = 7.2;
+						LastSwiftMigration = 0810;
 					};
 				};
 			};
@@ -200,29 +203,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		5AD8F0FEDFE1F868DD763852 /* Embed Pods Frameworks */ = {
+		40136D1A504A6EB723C47952 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		7B73E0BD7038A82E5B67A1B4 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -230,19 +218,34 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		8A3D4BD969A4E9C3122CA80E /* Copy Pods Resources */ = {
+		5CC1ACC12D7FB3769C3C2362 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwifterChat/Pods-SwifterChat-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8476AB2AE5E378D9490996FA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwifterChat/Pods-SwifterChat-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -298,8 +301,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -342,8 +347,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -362,31 +369,36 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
 		3E03AACE1C39647F00336938 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1D135494A4093158A091F592 /* Pods.debug.xcconfig */;
+			baseConfigurationReference = 23C77985AE9E6CE1FD70C268 /* Pods-SwifterChat.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = SwifterChat/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = hc.SwifterChat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		3E03AACF1C39647F00336938 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2342B302888DE025E76B42DF /* Pods.release.xcconfig */;
+			baseConfigurationReference = 3315066639A9D2718D805AEB /* Pods-SwifterChat.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = SwifterChat/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = hc.SwifterChat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

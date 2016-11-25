@@ -13,7 +13,7 @@ protocol ChatFooterDelegate {
      Send message and update main message table
     - parameter message: `chatInputField` text
     */
-    func sendChat(message : NSString)
+    func sendChat(message : String)
 }
 
 class ChatFooterView: UITableViewCell {
@@ -23,15 +23,15 @@ class ChatFooterView: UITableViewCell {
     @IBOutlet var chatInputField: UITextField!
     @IBOutlet var sendButton: UIButton!
     
-    @IBAction func sendAction(sender: AnyObject) {
-        delegate?.sendChat(chatInputField.text!)
+    @IBAction func sendAction(_ sender: AnyObject) {
+        delegate?.sendChat(message: chatInputField.text!)
         chatInputField.text = ""
     }
     override func awakeFromNib() {
         super.awakeFromNib()
     }
 
-    override func setSelected(selected: Bool, animated: Bool) {
+    override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
         

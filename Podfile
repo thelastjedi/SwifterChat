@@ -1,4 +1,6 @@
-platform :ios, "9.0"
+platform :ios, '9.0'
 use_frameworks!
 
-pod 'RealmSwift'
+target "SwifterChat" do
+    pod 'RealmSwift'
+end

@@ -30,7 +30,7 @@ class TableDataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
     }
     
     
-    func insertNewThought(message: NSString) {
+    func insertNewThought(_ message: String) {
         print("adding new message: \(message)")
         chatData.addNewThought(message)
         refreshDataSource()
@@ -40,45 +40,43 @@ class TableDataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
     // MARK: - UITableView data source
     
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return stubData.count
     }
     
-    
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(ChatBubbleCellIdentifier, forIndexPath: indexPath) as! ChatBubbleCell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: ChatBubbleCellIdentifier, for: indexPath) as! ChatBubbleCell
         let thought = stubData[indexPath.row]
         cell.chatLabel.text = thought.message as String
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.dateStyle = .ShortStyle
-        dateFormatter.timeStyle = .ShortStyle
-        cell.timeStampLabel.text = dateFormatter.stringFromDate(thought.timeStamp) as String
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .short
+        dateFormatter.timeStyle = .short
+        cell.timeStampLabel.text = dateFormatter.string(from: thought.timeStamp)
         return cell
     }
     
     
     // MARK: - UITableView delegate
     
-    
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
         let thought = stubData[indexPath.row]
         
         if thought.messageHeight != 0 {
             return thought.messageHeight;
         }
 
-        let sizingCell = tableView.dequeueReusableCellWithIdentifier(ChatBubbleCellIdentifier) as! ChatBubbleCell
+        let sizingCell = tableView.dequeueReusableCell(withIdentifier: ChatBubbleCellIdentifier) as! ChatBubbleCell
         let chat = stubData[indexPath.row]
         sizingCell.chatLabel.text = chat.message as String
         sizingCell.setNeedsLayout()
         sizingCell.layoutIfNeeded()
-        let height = sizingCell.contentView.systemLayoutSizeFittingSize(UILayoutFittingCompressedSize).height;
+        let height = sizingCell.contentView.systemLayoutSizeFitting(UILayoutFittingCompressedSize).height;
         try! chatData.realm.write {
             thought.messageHeight = height
         }
@@ -87,17 +85,17 @@ class TableDataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
     }
 
     
-    func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        let cell = tableView.dequeueReusableCellWithIdentifier(ChatFooterIdentifier) as! ChatFooterView
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        let cell = tableView.dequeueReusableCell(withIdentifier: ChatFooterIdentifier) as! ChatFooterView
         cell.delegate = parentViewRef
-        cell.autoresizingMask = .FlexibleWidth
+        cell.autoresizingMask = .flexibleWidth
         let footerView = UIView(frame: cell.frame)
         footerView.addSubview(cell)
         return footerView
     }
     
     
-    func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 71
     }
 

@@ -9,7 +9,7 @@
 import RealmSwift
 
 class Thought: Object {
-    dynamic var message: NSString = ""
-    dynamic var timeStamp: NSDate = NSDate()
+    dynamic var message = ""
+    dynamic var timeStamp = Date()
     dynamic var messageHeight : CGFloat = 0
 }

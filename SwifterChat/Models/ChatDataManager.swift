@@ -18,16 +18,16 @@ class ChatDataManager {
      Return updated array
      */
     func thoughtArray() -> [Thought] {
-        return Array(realm.objects(Thought))
+        return Array(realm.objects(Thought.self))
     }
     /**
      Add new message to realm object array
      - parameter message: content of thought
      */
-    func addNewThought(message : NSString) {
+    func addNewThought(_ message : String) {
         let newThought = Thought()
         newThought.message =  message
-        newThought.timeStamp =  NSDate()
+        newThought.timeStamp =  Date()
         try! realm.write {
             realm.add(newThought)
         }
