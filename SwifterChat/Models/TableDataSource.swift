@@ -16,11 +16,9 @@ class TableDataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
     var stubData = [Thought]()
     
     //For tableFooterView delegate
-    var parentViewRef:TableViewController?
+    var parentRef: TableViewController?
 
-    
-    // MARK: -
-    
+    // MARK: -    
 
     /**
     Refresh messages
@@ -30,7 +28,7 @@ class TableDataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
     }
     
     
-    func insertNewThought(_ message: String) {
+    func insert(_ message: String) {
         print("adding new message: \(message)")
         chatData.addNewThought(message)
         refreshDataSource()
@@ -50,7 +48,7 @@ class TableDataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: ChatBubbleCellIdentifier, for: indexPath) as! ChatBubbleCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: ChatCellId.bubble, for: indexPath) as! ChatBubbleCell
         let thought = stubData[indexPath.row]
         cell.chatLabel.text = thought.message as String
         let dateFormatter = DateFormatter()
@@ -71,7 +69,7 @@ class TableDataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
             return thought.messageHeight;
         }
 
-        let sizingCell = tableView.dequeueReusableCell(withIdentifier: ChatBubbleCellIdentifier) as! ChatBubbleCell
+        let sizingCell = tableView.dequeueReusableCell(withIdentifier: ChatCellId.bubble) as! ChatBubbleCell
         let chat = stubData[indexPath.row]
         sizingCell.chatLabel.text = chat.message as String
         sizingCell.setNeedsLayout()
@@ -86,8 +84,8 @@ class TableDataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
 
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        let cell = tableView.dequeueReusableCell(withIdentifier: ChatFooterIdentifier) as! ChatFooterView
-        cell.delegate = parentViewRef
+        let cell = tableView.dequeueReusableCell(withIdentifier: ChatCellId.footer) as! ChatFooterView
+        cell.delegate = parentRef
         cell.autoresizingMask = .flexibleWidth
         let footerView = UIView(frame: cell.frame)
         footerView.addSubview(cell)

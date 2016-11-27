@@ -10,10 +10,10 @@ import UIKit
 
 protocol ChatFooterDelegate {
      /**
-     Send message and update main message table
+     Save thought and update main message table
     - parameter message: `chatInputField` text
     */
-    func sendChat(message : String)
+    func saveThought(message : String)
 }
 
 class ChatFooterView: UITableViewCell {
@@ -24,7 +24,7 @@ class ChatFooterView: UITableViewCell {
     @IBOutlet var sendButton: UIButton!
     
     @IBAction func sendAction(_ sender: AnyObject) {
-        delegate?.sendChat(message: chatInputField.text!)
+        delegate?.saveThought(message: chatInputField.text!)
         chatInputField.text = ""
     }
     override func awakeFromNib() {

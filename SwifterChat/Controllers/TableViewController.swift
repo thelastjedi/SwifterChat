@@ -23,25 +23,22 @@ fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
 
 class TableViewController: UITableViewController, ChatFooterDelegate {
 
-    var tableDataSource: TableDataSource?
-    let scrollToBottomSelector = "scrollToBottom:"
-    
+    var chatDataSource = TableDataSource()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //Setup table
         
-        //Using auto layout for dynamic cell sizes
+        //auto layout for dynamic cell sizes
         tableView.estimatedRowHeight = 347
         tableView.rowHeight = UITableViewAutomaticDimension
         
-        //configure table data source
-        tableDataSource = TableDataSource()
-        tableDataSource!.refreshDataSource()
-        tableDataSource?.parentViewRef = self
-        tableView.dataSource = tableDataSource
-        tableView.delegate = tableDataSource
+        //table data source
+        chatDataSource.parentRef = self
+        chatDataSource.refreshDataSource()
+        tableView.dataSource = chatDataSource
+        tableView.delegate   = chatDataSource
     }
     
     override func didReceiveMemoryWarning() {
@@ -57,16 +54,16 @@ class TableViewController: UITableViewController, ChatFooterDelegate {
     }
 
     func textFieldDidBeginEditing(_ textField: UITextField!) {
-        self.perform(Selector(scrollToBottomSelector), with: true.hashValue, afterDelay: TVCScrollSelectorDelay)
+        self.perform(#selector(self.scrollToBottom(animated:)), with: true, afterDelay: CustomDelay.ScrollSelector)
     }
     
     // MARK: - ChatFooterDelegate
     
-    func sendChat(message: String) {
+    func saveThought(message: String) {
         if !message.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines).isEmpty {
-            tableDataSource!.insertNewThought(message)
+            chatDataSource.insert(message)
             self.tableView.reloadData()
-            self.perform(Selector(scrollToBottomSelector), with: false, afterDelay: TVCScrollSelectorDelay)
+            self.perform(#selector(self.scrollToBottom(animated:)), with: false, afterDelay: CustomDelay.ScrollSelector)
         }
         else {
             self.view.endEditing(true)
@@ -79,18 +76,15 @@ class TableViewController: UITableViewController, ChatFooterDelegate {
     For n rows, perform `scrollToRowAtIndexPath(indexPath: NSIndexPath, atScrollPosition scrollPosition: UITableViewScrollPosition, animated: Bool)` till **n-2th** row with the below variable `animated` followed by scrolling till **n-1th** row with animated: `true`
     - parameter animated: animated bool for scrollToRowAtIndexPath for **n-2th** row
     */
-    func scrollToBottom(_ animated : AnyObject) {
-        if (self.tableDataSource?.stubData.count) < 2 {
+    func scrollToBottom(animated : Bool) {
+        if (self.chatDataSource.stubData.count) < 2 {
             return
         }
-        //to
-        let delay = TVCScrollAnimationDelay * Double(NSEC_PER_SEC)
-        let time = DispatchTime.now() + Double(Int64(delay)) / Double(NSEC_PER_SEC)
         
-        DispatchQueue.main.asyncAfter(deadline: time, execute: {
-            self.tableView.scrollToRow(at: IndexPath(row: (self.tableDataSource?.stubData.count)! - 2, section: 0), at: .bottom, animated: animated.boolValue)
-            self.tableView.scrollToRow(at: IndexPath(row: (self.tableDataSource?.stubData.count)! - 1, section: 0), at: .bottom, animated: true)
-        })
+        DispatchQueue.main.asyncAfter(deadline: .now() + CustomDelay.ScrollAnimation) {
+            self.tableView.scrollToRow(at: IndexPath(row: (self.chatDataSource.stubData.count) - 2, section: 0), at: .bottom, animated: animated)
+            self.tableView.scrollToRow(at: IndexPath(row: (self.chatDataSource.stubData.count) - 1, section: 0), at: .bottom, animated: true)
+        }
     }
     
 

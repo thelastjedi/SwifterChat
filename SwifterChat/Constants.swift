@@ -6,10 +6,12 @@
 //  Copyright © 2016 HC. All rights reserved.
 //
 
-import Foundation
+struct ChatCellId {
+    static let bubble = "ChatBubbleCell"
+    static let footer = "ChatFooterView"
+}
 
-let ChatBubbleCellIdentifier = "ChatBubbleCell"
-let ChatFooterIdentifier = "ChatFooterView"
-
-let TVCScrollSelectorDelay  = 0.4
-let TVCScrollAnimationDelay = 0.1
+struct CustomDelay {
+    static let ScrollSelector  = 0.4
+    static let ScrollAnimation = 0.1
+}
